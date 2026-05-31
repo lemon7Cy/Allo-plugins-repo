@@ -13,6 +13,8 @@
   "tools": [],
   "permissions": ["browser", "network", "screenshots", "local-web-targets"],
   "required_env": [],
+  "optional_env": [],
+  "credentials": [],
   "homepage": "https://github.com/microsoft/playwright-mcp",
   "notes": "Install stores the MCP command only. The browser MCP server is not launched during install.",
   "source": "marketplace"

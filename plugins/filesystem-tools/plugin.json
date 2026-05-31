@@ -12,8 +12,10 @@
   },
   "tools": [],
   "permissions": ["filesystem-read", "filesystem-write", "workspace-only"],
-  "required_env": ["ALLO_WORKSPACE_PATH"],
+  "required_env": [],
+  "optional_env": [],
+  "credentials": [],
   "homepage": "https://github.com/modelcontextprotocol/servers",
-  "notes": "Must be launched with ALLO_WORKSPACE_PATH set to the active workspace. Do not point this plugin at a home directory or filesystem root.",
+  "notes": "ALLO_WORKSPACE_PATH is injected by Allo at runtime. Do not point this plugin at a home directory or filesystem root.",
   "source": "marketplace"
 }

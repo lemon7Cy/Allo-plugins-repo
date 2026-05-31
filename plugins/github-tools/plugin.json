@@ -15,6 +15,17 @@
   "tools": [],
   "permissions": ["github-api", "network", "repository-metadata", "repository-write"],
   "required_env": ["GITHUB_TOKEN"],
+  "optional_env": [],
+  "credentials": [
+    {
+      "key": "GITHUB_TOKEN",
+      "label": "GitHub Personal Access Token",
+      "description": "Used to access GitHub repositories, issues, and pull requests.",
+      "required": true,
+      "secret": true,
+      "docs_url": "https://github.com/settings/tokens"
+    }
+  ],
   "homepage": "https://github.com/modelcontextprotocol/servers",
   "notes": "Requires GITHUB_TOKEN before runtime use. Install does not validate or use the token.",
   "source": "marketplace"

@@ -17,6 +17,8 @@
       "tools": [],
       "permissions": ["browser", "network", "screenshots", "local-web-targets"],
       "required_env": [],
+      "optional_env": [],
+      "credentials": [],
       "homepage": "https://github.com/microsoft/playwright-mcp",
       "notes": "Install stores the MCP command only. The browser MCP server is not launched during install.",
       "source": "marketplace"
@@ -38,6 +40,17 @@
       "tools": [],
       "permissions": ["github-api", "network", "repository-metadata", "repository-write"],
       "required_env": ["GITHUB_TOKEN"],
+      "optional_env": [],
+      "credentials": [
+        {
+          "key": "GITHUB_TOKEN",
+          "label": "GitHub Personal Access Token",
+          "description": "Used to access GitHub repositories, issues, and pull requests.",
+          "required": true,
+          "secret": true,
+          "docs_url": "https://github.com/settings/tokens"
+        }
+      ],
       "homepage": "https://github.com/modelcontextprotocol/servers",
       "notes": "Requires GITHUB_TOKEN before runtime use. Install does not validate or use the token.",
       "source": "marketplace"
@@ -56,9 +69,83 @@
       },
       "tools": [],
       "permissions": ["filesystem-read", "filesystem-write", "workspace-only"],
-      "required_env": ["ALLO_WORKSPACE_PATH"],
+      "required_env": [],
+      "optional_env": [],
+      "credentials": [],
       "homepage": "https://github.com/modelcontextprotocol/servers",
-      "notes": "Must be launched with ALLO_WORKSPACE_PATH set to the active workspace. Do not point this plugin at a home directory or filesystem root.",
+      "notes": "ALLO_WORKSPACE_PATH is injected by Allo at runtime. Do not point this plugin at a home directory or filesystem root.",
+      "source": "marketplace"
+    },
+    {
+      "id": "dfcode-enterprise-mcp",
+      "name": "dfcode-enterprise-mcp",
+      "version": "1.0.0",
+      "description": "DFCode Enterprise MCP Server for querying organization dashboard, usage analytics, user management, audit logs, and model endpoints.",
+      "author": "dfcode",
+      "type": "mcp",
+      "command": {
+        "url": "https://admin.dfcode.com/mcp/sse",
+        "env": {
+          "X-API-Key": "$DFCODE_API_KEY"
+        }
+      },
+      "tools": [
+        {
+          "name": "query_dashboard",
+          "description": "Organization dashboard overview including today/7d/month usage stats, active members, model distribution, and top employees."
+        },
+        {
+          "name": "query_usage",
+          "description": "Usage detail and aggregation queries with single and cross-dimension aggregation support."
+        },
+        {
+          "name": "query_users",
+          "description": "Query member list and activity status."
+        },
+        {
+          "name": "query_user_detail",
+          "description": "Query a specific member's profile including basic info, MAAS quota, device list, and roster status."
+        },
+        {
+          "name": "query_employee_detail",
+          "description": "Query a specific member's detailed usage analysis including overview, daily trends, model distribution, and raw entries."
+        },
+        {
+          "name": "query_audit_logs",
+          "description": "Query audit logs including admin operations, employee logins, and device authorizations."
+        },
+        {
+          "name": "query_roster",
+          "description": "Query employee roster/directory with search by name, employee ID, department, and status."
+        },
+        {
+          "name": "query_model_endpoints",
+          "description": "Query local model endpoint list including name, provider, status, and pricing."
+        },
+        {
+          "name": "query_maas_models",
+          "description": "Query logical model list from MAAS gateway in real-time, including enabled status, groups, and capability tags."
+        },
+        {
+          "name": "query_user_devices",
+          "description": "Query a specific member's device list."
+        }
+      ],
+      "permissions": ["enterprise-data", "network", "user-analytics", "audit-logs"],
+      "required_env": ["DFCODE_API_KEY"],
+      "optional_env": [],
+      "credentials": [
+        {
+          "key": "DFCODE_API_KEY",
+          "label": "DFCode API Key",
+          "description": "API key for authenticating with DFCode Enterprise MCP Server. Sent as X-API-Key header.",
+          "required": true,
+          "secret": true,
+          "docs_url": "https://admin.dfcode.com"
+        }
+      ],
+      "homepage": "https://admin.dfcode.com",
+      "notes": "SSE-based MCP connection. The API key is sent as X-API-Key header during SSE handshake and JSON-RPC requests.",
       "source": "marketplace"
     }
   ]
