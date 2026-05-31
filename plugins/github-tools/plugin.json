@@ -1,0 +1,21 @@
+{
+  "id": "github-tools",
+  "name": "github-tools",
+  "version": "1.0.0",
+  "description": "GitHub repository operations through MCP, including issues, pull requests, and repository metadata.",
+  "author": "allo-official",
+  "type": "mcp",
+  "command": {
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-github"],
+    "env": {
+      "GITHUB_PERSONAL_ACCESS_TOKEN": "$GITHUB_TOKEN"
+    }
+  },
+  "tools": [],
+  "permissions": ["github-api", "network", "repository-metadata", "repository-write"],
+  "required_env": ["GITHUB_TOKEN"],
+  "homepage": "https://github.com/modelcontextprotocol/servers",
+  "notes": "Requires GITHUB_TOKEN before runtime use. Install does not validate or use the token.",
+  "source": "marketplace"
+}

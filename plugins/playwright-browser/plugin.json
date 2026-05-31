@@ -1,0 +1,19 @@
+{
+  "id": "playwright-browser",
+  "name": "playwright-browser",
+  "version": "1.0.0",
+  "description": "Browser automation via Playwright MCP for UI validation, screenshots, console, and network inspection.",
+  "author": "allo-official",
+  "type": "mcp",
+  "command": {
+    "command": "npx",
+    "args": ["-y", "@playwright/mcp"],
+    "env": {}
+  },
+  "tools": [],
+  "permissions": ["browser", "network", "screenshots", "local-web-targets"],
+  "required_env": [],
+  "homepage": "https://github.com/microsoft/playwright-mcp",
+  "notes": "Install stores the MCP command only. The browser MCP server is not launched during install.",
+  "source": "marketplace"
+}

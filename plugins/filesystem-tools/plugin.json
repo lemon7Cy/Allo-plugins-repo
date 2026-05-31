@@ -1,0 +1,19 @@
+{
+  "id": "filesystem-tools",
+  "name": "filesystem-tools",
+  "version": "1.0.0",
+  "description": "Workspace-bounded filesystem operations through MCP.",
+  "author": "allo-official",
+  "type": "mcp",
+  "command": {
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-filesystem", "$ALLO_WORKSPACE_PATH"],
+    "env": {}
+  },
+  "tools": [],
+  "permissions": ["filesystem-read", "filesystem-write", "workspace-only"],
+  "required_env": ["ALLO_WORKSPACE_PATH"],
+  "homepage": "https://github.com/modelcontextprotocol/servers",
+  "notes": "Must be launched with ALLO_WORKSPACE_PATH set to the active workspace. Do not point this plugin at a home directory or filesystem root.",
+  "source": "marketplace"
+}

@@ -1,0 +1,65 @@
+{
+  "name": "Allo Plugin Marketplace",
+  "description": "Official Allo MCP and CLI plugin marketplace",
+  "plugins": [
+    {
+      "id": "playwright-browser",
+      "name": "playwright-browser",
+      "version": "1.0.0",
+      "description": "Browser automation via Playwright MCP for UI validation, screenshots, console, and network inspection.",
+      "author": "allo-official",
+      "type": "mcp",
+      "command": {
+        "command": "npx",
+        "args": ["-y", "@playwright/mcp"],
+        "env": {}
+      },
+      "tools": [],
+      "permissions": ["browser", "network", "screenshots", "local-web-targets"],
+      "required_env": [],
+      "homepage": "https://github.com/microsoft/playwright-mcp",
+      "notes": "Install stores the MCP command only. The browser MCP server is not launched during install.",
+      "source": "marketplace"
+    },
+    {
+      "id": "github-tools",
+      "name": "github-tools",
+      "version": "1.0.0",
+      "description": "GitHub repository operations through MCP, including issues, pull requests, and repository metadata.",
+      "author": "allo-official",
+      "type": "mcp",
+      "command": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-github"],
+        "env": {
+          "GITHUB_PERSONAL_ACCESS_TOKEN": "$GITHUB_TOKEN"
+        }
+      },
+      "tools": [],
+      "permissions": ["github-api", "network", "repository-metadata", "repository-write"],
+      "required_env": ["GITHUB_TOKEN"],
+      "homepage": "https://github.com/modelcontextprotocol/servers",
+      "notes": "Requires GITHUB_TOKEN before runtime use. Install does not validate or use the token.",
+      "source": "marketplace"
+    },
+    {
+      "id": "filesystem-tools",
+      "name": "filesystem-tools",
+      "version": "1.0.0",
+      "description": "Workspace-bounded filesystem operations through MCP.",
+      "author": "allo-official",
+      "type": "mcp",
+      "command": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-filesystem", "$ALLO_WORKSPACE_PATH"],
+        "env": {}
+      },
+      "tools": [],
+      "permissions": ["filesystem-read", "filesystem-write", "workspace-only"],
+      "required_env": ["ALLO_WORKSPACE_PATH"],
+      "homepage": "https://github.com/modelcontextprotocol/servers",
+      "notes": "Must be launched with ALLO_WORKSPACE_PATH set to the active workspace. Do not point this plugin at a home directory or filesystem root.",
+      "source": "marketplace"
+    }
+  ]
+}
