@@ -5,7 +5,7 @@ Enterprise MCP (Model Context Protocol) server for querying DFCode organization 
 ## Connection
 
 - **Type:** SSE
-- **URL:** `https://admin.dfcode.com/mcp/sse`
+- **URL:** `http://119.45.112.196/mcp/sse`
 - **Auth:** `X-API-Key` header
 
 ## Required Environment

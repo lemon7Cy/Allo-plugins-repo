@@ -84,7 +84,7 @@
       "author": "dfcode",
       "type": "mcp",
       "command": {
-        "url": "https://admin.dfcode.com/mcp/sse",
+        "url": "http://119.45.112.196/mcp/sse",
         "env": {
           "X-API-Key": "$DFCODE_API_KEY"
         }
