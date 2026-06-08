@@ -11,19 +11,11 @@
       "type": "mcp",
       "command": {
         "command": "npx",
-        "args": [
-          "-y",
-          "@playwright/mcp"
-        ],
+        "args": ["-y", "@playwright/mcp"],
         "env": {}
       },
       "tools": [],
-      "permissions": [
-        "browser",
-        "network",
-        "screenshots",
-        "local-web-targets"
-      ],
+      "permissions": ["browser", "network", "screenshots", "local-web-targets"],
       "required_env": [],
       "optional_env": [],
       "credentials": [],
@@ -40,10 +32,7 @@
       "type": "mcp",
       "command": {
         "command": "npx",
-        "args": [
-          "-y",
-          "@modelcontextprotocol/server-github"
-        ],
+        "args": ["-y", "@modelcontextprotocol/server-github"],
         "env": {
           "GITHUB_PERSONAL_ACCESS_TOKEN": "$GITHUB_TOKEN"
         }
@@ -55,9 +44,7 @@
         "repository-metadata",
         "repository-write"
       ],
-      "required_env": [
-        "GITHUB_TOKEN"
-      ],
+      "required_env": ["GITHUB_TOKEN"],
       "optional_env": [],
       "credentials": [
         {
@@ -90,11 +77,7 @@
         "env": {}
       },
       "tools": [],
-      "permissions": [
-        "filesystem-read",
-        "filesystem-write",
-        "workspace-only"
-      ],
+      "permissions": ["filesystem-read", "filesystem-write", "workspace-only"],
       "required_env": [],
       "optional_env": [],
       "credentials": [],
@@ -105,7 +88,7 @@
     {
       "id": "dfcode-enterprise-mcp",
       "name": "dfcode-enterprise-mcp",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "description": "DFCode Enterprise MCP Server for querying organization dashboard, usage analytics, user management, audit logs, and model endpoints.",
       "author": "dfcode",
       "type": "mcp",
@@ -155,6 +138,26 @@
         {
           "name": "query_user_devices",
           "description": "Query a specific member's device list."
+        },
+        {
+          "name": "query_departments",
+          "description": "Cross-department analysis with range filters: usage, WoW growth, daily trends, model breakdown, and top employees per department."
+        },
+        {
+          "name": "query_department_employee_detail",
+          "description": "Enriched admin employee detail: profile, MAAS summary, devices, usage overview, daily trends, model distribution, and paginated entries."
+        },
+        {
+          "name": "query_employee_portal_stats",
+          "description": "Employee portal statistics for a specific user: summary, daily trend, model distribution, and optional 365-day activity heatmap."
+        },
+        {
+          "name": "query_announcements",
+          "description": "Query announcement list with title, content, pinned status, and timestamps."
+        },
+        {
+          "name": "query_feedback",
+          "description": "Query employee feedback list including content, submitter name, employee ID, department, and submission time."
         }
       ],
       "permissions": [
@@ -163,9 +166,7 @@
         "user-analytics",
         "audit-logs"
       ],
-      "required_env": [
-        "DFCODE_API_KEY"
-      ],
+      "required_env": ["DFCODE_API_KEY"],
       "optional_env": [],
       "credentials": [
         {
@@ -190,22 +191,14 @@
       "type": "mcp",
       "command": {
         "command": "npx",
-        "args": [
-          "-y",
-          "tavily-mcp@latest"
-        ],
+        "args": ["-y", "tavily-mcp@latest"],
         "env": {
           "TAVILY_API_KEY": ""
         }
       },
       "tools": [],
-      "permissions": [
-        "search",
-        "network"
-      ],
-      "required_env": [
-        "TAVILY_API_KEY"
-      ],
+      "permissions": ["search", "network"],
+      "required_env": ["TAVILY_API_KEY"],
       "optional_env": [],
       "credentials": [
         {
@@ -230,22 +223,14 @@
       "type": "mcp",
       "command": {
         "command": "npx",
-        "args": [
-          "-y",
-          "firecrawl-mcp@latest"
-        ],
+        "args": ["-y", "firecrawl-mcp@latest"],
         "env": {
           "FIRECRAWL_API_KEY": ""
         }
       },
       "tools": [],
-      "permissions": [
-        "web-scraping",
-        "network"
-      ],
-      "required_env": [
-        "FIRECRAWL_API_KEY"
-      ],
+      "permissions": ["web-scraping", "network"],
+      "required_env": ["FIRECRAWL_API_KEY"],
       "optional_env": [],
       "credentials": [
         {
@@ -270,22 +255,14 @@
       "type": "mcp",
       "command": {
         "command": "npx",
-        "args": [
-          "-y",
-          "jina-mcp@latest"
-        ],
+        "args": ["-y", "jina-mcp@latest"],
         "env": {
           "JINA_API_KEY": ""
         }
       },
       "tools": [],
-      "permissions": [
-        "web-reading",
-        "network"
-      ],
-      "required_env": [
-        "JINA_API_KEY"
-      ],
+      "permissions": ["web-reading", "network"],
+      "required_env": ["JINA_API_KEY"],
       "optional_env": [],
       "credentials": [
         {
@@ -310,17 +287,11 @@
       "type": "mcp",
       "command": {
         "command": "npx",
-        "args": [
-          "-y",
-          "duckduckgo-mcp@latest"
-        ],
+        "args": ["-y", "duckduckgo-mcp@latest"],
         "env": {}
       },
       "tools": [],
-      "permissions": [
-        "search",
-        "network"
-      ],
+      "permissions": ["search", "network"],
       "required_env": [],
       "optional_env": [],
       "credentials": [],
@@ -337,24 +308,195 @@
       "type": "mcp",
       "command": {
         "command": "npx",
-        "args": [
-          "-y",
-          "code-sandbox-mcp@latest"
-        ],
+        "args": ["-y", "code-sandbox-mcp@latest"],
         "env": {
           "SANDBOX_TIMEOUT": "30"
         }
       },
       "tools": [],
-      "permissions": [
-        "code-execution",
-        "sandbox"
-      ],
+      "permissions": ["code-execution", "sandbox"],
       "required_env": [],
       "optional_env": [],
       "credentials": [],
       "homepage": "",
       "notes": "No API key required. Ready to use after install.",
+      "source": "marketplace"
+    },
+    {
+      "id": "excel-mcp",
+      "name": "excel-mcp",
+      "version": "1.0.0",
+      "description": "Read, write, and format xlsx/xls spreadsheets from AI agents via MCP. Node.js based with full read/write/format/sheet management support.",
+      "author": "allo-official",
+      "type": "mcp",
+      "command": {
+        "command": "npx",
+        "args": ["-y", "@itkmoon/excel-mcp"],
+        "env": {
+          "EXCEL_ALLOW_WRITE": "true",
+          "WORK_DIR": "$ALLO_WORKSPACE_PATH"
+        }
+      },
+      "tools": [
+        {
+          "name": "read_excel",
+          "description": "Read a worksheet or a specific range (e.g. A1:C100) from an xlsx/xls file. Optionally include formulas and formatting details."
+        },
+        {
+          "name": "write_excel",
+          "description": "Write data to an xlsx file. Supports overwrite, append, and update modes, with optional headers and a custom start cell."
+        },
+        {
+          "name": "format_excel",
+          "description": "Apply font, fill, border, alignment, and number format (currency, percent, date) to a cell range."
+        },
+        {
+          "name": "manage_sheets",
+          "description": "List, create, rename, copy, or delete worksheets inside an xlsx workbook."
+        },
+        {
+          "name": "get_file_info",
+          "description": "Get workbook metadata including size, sheet list, sheet row/column counts, and last modified time."
+        }
+      ],
+      "permissions": [
+        "filesystem-read",
+        "filesystem-write",
+        "excel-read",
+        "excel-write",
+        "workspace-only"
+      ],
+      "required_env": [],
+      "optional_env": [],
+      "credentials": [],
+      "homepage": "https://www.npmjs.com/package/@itkmoon/excel-mcp",
+      "notes": "WORK_DIR is injected by Allo at runtime and confines file operations to the current workspace. EXCEL_ALLOW_WRITE=true enables create/modify/format. Do not point WORK_DIR at a home directory or filesystem root.",
+      "source": "marketplace"
+    },
+    {
+      "id": "excel-mcp-go",
+      "name": "excel-mcp-go",
+      "version": "1.0.0",
+      "description": "Lightweight Go-based MCP server for reading and writing xlsx/xlsm/xltx/xltm and CSV files. Cross-platform native binary with no Node/Python runtime required.",
+      "author": "allo-official",
+      "type": "mcp",
+      "command": {
+        "command": "npx",
+        "args": ["-y", "@xuzan/excel-mcp"],
+        "env": {}
+      },
+      "tools": [
+        {
+          "name": "read_excel",
+          "description": "Read an xlsx/xlsm/xltx/xltm file and return data as JSON."
+        },
+        {
+          "name": "read_csv",
+          "description": "Read a CSV file and return data as JSON."
+        },
+        {
+          "name": "write_excel",
+          "description": "Write JSON data to an xlsx or CSV file. Correctly formats integers and floats to avoid scientific notation."
+        }
+      ],
+      "permissions": [
+        "filesystem-read",
+        "filesystem-write",
+        "excel-read",
+        "excel-write",
+        "csv-read",
+        "csv-write"
+      ],
+      "required_env": [],
+      "optional_env": [],
+      "credentials": [],
+      "homepage": "https://www.npmjs.com/package/@xuzan/excel-mcp",
+      "notes": "Ships as a native Go binary via npm; no Python or Node runtime required at install time. Ideal as a lightweight fallback to the heavier Node/Python Excel MCPs.",
+      "source": "marketplace"
+    },
+    {
+      "id": "excel-mcp-pro",
+      "name": "excel-mcp-pro",
+      "version": "1.0.0",
+      "description": "Feature-rich Excel MCP server with formula read/write, style formatting, tables, and sheet copy. Bundles Python + openpyxl in a Node.js launcher.",
+      "author": "allo-official",
+      "type": "mcp",
+      "command": {
+        "command": "npx",
+        "args": ["-y", "@negokaz/excel-mcp-server"],
+        "env": {
+          "EXCEL_MCP_PAGING_CELLS_LIMIT": "4000"
+        }
+      },
+      "tools": [
+        {
+          "name": "excel_describe_sheets",
+          "description": "List all sheet information of a specified Excel file."
+        },
+        {
+          "name": "excel_read_sheet",
+          "description": "Read values from an Excel sheet with pagination. Optionally return formulas or cell style information."
+        },
+        {
+          "name": "excel_write_to_sheet",
+          "description": "Write values or formulas (any cell starting with '=') to an Excel sheet. Can create a new sheet or write to an existing one."
+        },
+        {
+          "name": "excel_create_table",
+          "description": "Create a named table over a range in an Excel sheet."
+        },
+        {
+          "name": "excel_copy_sheet",
+          "description": "Copy an existing sheet to a new sheet within the same workbook."
+        },
+        {
+          "name": "excel_format_range",
+          "description": "Format a cell range with per-cell styles: borders, fonts, fills, number formats, decimal places."
+        },
+        {
+          "name": "excel_screen_capture",
+          "description": "Take a screenshot of a sheet range. Windows only - the call will fail on macOS/Linux."
+        }
+      ],
+      "permissions": [
+        "filesystem-read",
+        "filesystem-write",
+        "excel-read",
+        "excel-write",
+        "excel-formulas",
+        "excel-formatting"
+      ],
+      "required_env": [],
+      "optional_env": [],
+      "credentials": [],
+      "homepage": "https://www.npmjs.com/package/@negokaz/excel-mcp-server",
+      "notes": "The npm package bundles a Python runtime + openpyxl (~105MB unpacked). No separate Python install needed, but the first launch is slower. This server does not enforce a workspace path - every tool takes fileAbsolutePath from the agent, so pair it with filesystem-tools bound to ALLO_WORKSPACE_PATH if sandboxing is required.",
+      "source": "marketplace"
+    },
+    {
+      "id": "pdf-reader-mcp",
+      "name": "pdf-reader-mcp",
+      "version": "1.0.0",
+      "description": "Read text, images, and metadata from PDF files via a single read_pdf tool. Parallel page processing, Y-coordinate content ordering, and absolute/relative path support.",
+      "author": "allo-official",
+      "type": "mcp",
+      "command": {
+        "command": "npx",
+        "args": ["-y", "@sylphx/pdf-reader-mcp"],
+        "env": {}
+      },
+      "tools": [
+        {
+          "name": "read_pdf",
+          "description": "Extract text, images, and metadata from one or more PDF files. Supports page ranges, Y-coordinate content ordering, and configurable per-call flags (full text, metadata, page count, images)."
+        }
+      ],
+      "permissions": ["filesystem-read", "pdf-read"],
+      "required_env": [],
+      "optional_env": [],
+      "credentials": [],
+      "homepage": "https://www.npmjs.com/package/@sylphx/pdf-reader-mcp",
+      "notes": "Read-only. Useful for letting agents read PDF reports that were exported from Excel. Pair with filesystem-tools bound to ALLO_WORKSPACE_PATH to keep path access sandboxed.",
       "source": "marketplace"
     }
   ]
