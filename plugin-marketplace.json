@@ -292,7 +292,7 @@
         "command": "uvx",
         "args": [
           "--from",
-          "mcp-server-fetch==1.28.1",
+          "mcp-server-fetch==2026.7.10",
           "mcp-server-fetch"
         ],
         "env": {}
